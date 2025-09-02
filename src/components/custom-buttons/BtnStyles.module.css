@@ -1,0 +1,81 @@
+.wrapper{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.settings_btn{
+  height: 90%;  
+  width: 10%;
+  min-width: 100px;
+  cursor: pointer;
+  background-color: rgb(237, 237, 237);
+  border: lightskyblue 1px solid;
+  border-radius: 1.5rem;
+}
+
+
+.settings_btn:active {
+  background-color: rgb(243, 247, 215); /* Change background color when clicked */
+  transform: scale(0.95); /* Slightly shrink the button when clicked */
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 24px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/*Calendar BTN*/
+.calendarBTN{
+  background-color: rgba(188, 250, 250, 0.417);
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.calendarBTN:active{
+  background-color: lightgray;
+  border-radius: 1rem;
+}

@@ -1,0 +1,11 @@
+.OutsideTemp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+    border: lightskyblue solid 1px ;
+    border-radius: 10rem;
+    width: 60%;
+    font-size: large;
+    padding: 1rem;
+}

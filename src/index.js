@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MainProvider } from './context-api/MainProvider';
+import MessageWindow from './hoc-components/MessageWindow';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <MainProvider>
+      <MessageWindow/>
+      <App />
+    </MainProvider>
   </React.StrictMode>
 );
 
