@@ -5,6 +5,7 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
+  background-color: rgb(36, 46, 64);
 }
 .App {
   display: flex;
@@ -22,9 +23,12 @@ html, body {
   align-items: center;
   width: 90%;
   height: 95%;
-  border: black 2px solid;
+  border: rgb(226, 226, 226) 1px solid;
   border-radius: 2rem;
   box-sizing: border-box;
+
+  background-color: rgb(59, 69, 86);
+  box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
 }
 .wrapper_2{
   margin: 0;
@@ -46,26 +50,42 @@ html, body {
   height: 20%;
   box-sizing: border-box;
 }
+
+.temp_holder__outer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 160px;
+  height: 160px;
+
+  border-radius: 50%;
+  background-color: rgb(240, 240, 240);
+  border: darkgray solid 1px;
+}
+
 .temp_holder{
   display: flex;
   flex-direction: column;
   align-items:center;
   justify-content: center;
   background-color: rgb(1, 67, 89);
-  width: 100px;
-  height: 100px;
-
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
-  border: 2px solid grey;
+  border: 1px solid white;
   box-sizing: border-box;
-  
+  background-color: black;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.5);
 }
 
 .temp{
   align-self: center;
   color: white;
   font-weight: bolder;
-  font-size: 3.25rem;
+  font-size: 3rem;
+  font-family: 'Lato', sans-serif;
 }
 
 .buttons_holder{

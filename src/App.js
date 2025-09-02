@@ -112,16 +112,20 @@ function App() {
             </div>
   
             <div className={styles.center_icon__holder}>
-              <div className={styles.temp_holder}>
-                {
-                  loading ? <Spinner /> :
-                  <>
-                    <p className={styles.temp}>
-                      {tempData !== null ? tempData.setTemp : '...'}°
-                    </p>
-                  </>
-                }
+
+              <div className={styles.temp_holder__outer}>
+                <div className={styles.temp_holder}>
+                  {
+                    loading ? <Spinner /> :
+                    <>
+                      <p className={styles.temp}>
+                        {tempData !== null ? tempData.setTemp : '...'}°
+                      </p>
+                    </>
+                  }
+                </div>
               </div>
+
               <div className={styles.height_bump}>
                 <h1>{clientSetTemp ? `${clientSetTemp}°`: ''}</h1>
               </div>

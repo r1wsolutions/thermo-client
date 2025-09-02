@@ -3,12 +3,14 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 100%;
     border: lightgrey solid 1px;
     border-radius: 1rem;
 
-    background-color: rgba(153, 254, 249, 0.168);
+    /*background-color: rgba(153, 254, 249, 0.168);*/
+    background-color: rgb(78, 106, 119);
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.5);
 }
 
 .margin_none{
