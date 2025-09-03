@@ -10,7 +10,7 @@ export const HeatStageOneBtn = (props) =>{
             const response = await fetch(requestAddress.directIP_toggleHeatStageOne, 
                 {
                     method: 'GET'
-                });
+                }); 
 
             if (!response.ok) {
                 console.error('Failed to update Heat Stage One:', response.status);

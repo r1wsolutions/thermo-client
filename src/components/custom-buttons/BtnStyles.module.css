@@ -12,9 +12,10 @@
   height: 100px;
   
   /* Modern styling */
-  background: linear-gradient(145deg, #ffffff, #e6e6e6);
-  box-shadow: 3px 3px 8px rgba(209, 209, 209, 0.6);
-  border: none;
+  /* background: linear-gradient(145deg, #ffffff, #e6e6e6); */
+  /* box-shadow: 3px 3px 8px rgba(209, 209, 209, 0.6); */
+  background-color: white;
+  border: white solid 2px;
   border-radius: 50%; /* Fully round */
   
   cursor: pointer;

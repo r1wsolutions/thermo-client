@@ -57,8 +57,8 @@ html, body {
   justify-content: center;
   align-items: center;
 
-  width: 160px;
-  height: 160px;
+  width: 225px;
+  height: 225px;
 
   border-radius: 50%;
   background-color: rgb(240, 240, 240);
@@ -71,8 +71,8 @@ html, body {
   align-items:center;
   justify-content: center;
   background-color: rgb(1, 67, 89);
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   border: 1px solid white;
   box-sizing: border-box;
@@ -84,7 +84,7 @@ html, body {
   align-self: center;
   color: white;
   font-weight: bolder;
-  font-size: 3rem;
+  font-size: 5rem;
   font-family: 'Lato', sans-serif;
 }
 
@@ -94,21 +94,28 @@ html, body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   min-width: 700px;
-  min-height: 100px;
+  min-height: 125px;
   height: 15%;
   border-top: solid 1px rgba(0, 0, 0, 0.168);
   border-bottom: solid 2px rgba(0, 0, 0, 0.168);
   border-radius: 0 0 2rem 2rem;
-  gap: 2rem;
+  gap: 4rem;
   box-sizing: border-box;
 }
 
-/* Removed old button styles - now using shared styles in BtnStyles.module.css */
+.center_holder{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+}
+
 .left_holder{
-  width: 40%;
+  width: 35%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -118,7 +125,7 @@ html, body {
 }
 
 .center_icon__holder{
-  width: 20%;
+  width: 30%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -127,20 +134,12 @@ html, body {
 }
 
 .right_holder{
-  width: 40%;
+  width: 35%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content:space-around;
   align-items:center;
-}
-
-.center_holder{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100%;
-  height: 70%;
 }
 
 .flex_centered{

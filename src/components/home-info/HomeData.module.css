@@ -39,6 +39,40 @@
     text-align: center;
     border: black solid 1px;
 }
+.top_margin{
+    margin-top: 1rem;
+}
+
+.bottom_margin{
+    margin-bottom: 1rem;
+}
+.on{
+    color: greenyellow;
+    font-weight: bolder;
+}
+
+.off{
+    color: rgb(131, 131, 131);
+    font-weight: bolder;
+}
+
+.off_text {
+  font-size: larger;
+  font-weight: bolder;
+  color: red; /* fill color */
+
+  /* For browsers that support stroke */
+  -webkit-text-stroke: 1px black; 
+  text-stroke: 1px black;
+
+  /* Fallback for Firefox (tight outline, no glow) */
+  text-shadow:
+    1px 0 0 black,
+   -1px 0 0 black,
+    0 1px 0 black,
+    0 -1px 0 black;
+}
+
 
 
 

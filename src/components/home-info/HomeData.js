@@ -54,15 +54,22 @@ export const HomeData =()=>{
 
     return(
         <div className={styles.wrapper}>
-            <Home size={iconSize} color="gray" strokeWidth={2} />
-            <div className={styles.inside_temp__wrapper}>
-                <p>INSIDE TEMP: </p>
-                <p className={`${styles.margin_none} ${styles.light_background}`}>{`${tempData ? tempData.temp.toFixed(2) : '...'}°`}</p>
+            <div className={styles.top_margin}>
+                <Home size={iconSize} color="gray" strokeWidth={2} />
             </div>
-            <p className={styles.margin_none}>{`${tempData ? tempData.humidity.toFixed(2) : '...'}%`}</p>
-            <p className={styles.margin_none}>System Status: {systemStates !== null ? systemStates.power : 'OFF'}</p>
-            <p className={styles.margin_none}>{`${systemStates !== null ? systemStates.Fan === 'ON' ? 'FAN: ' + systemStates.Fan : 'FAN: AUTO' : ''}`}</p>
-            <CurStatusSetting />
+            
+            {systemStates &&    
+                <>
+                    <div className={styles.inside_temp__wrapper}>
+                        <p>INSIDE TEMP: </p>
+                        <p className={`${styles.margin_none} ${styles.light_background}`}>{`${tempData ? tempData.temp.toFixed(2) : '...'}°`}</p>
+                    </div>
+                    <p className={styles.margin_none}>{`${tempData ? tempData.humidity.toFixed(2) : '...'}%`}</p>
+                    <p className={`${styles.margin_none} ${systemStates.power === 'ON' ? styles.on : styles.off}`}>System Status: {systemStates.power === 'ON' ? systemStates.power : <span className={styles.off_text}>OFF</span>}</p>
+                    <p className={styles.margin_none}>{`${systemStates !== null ? systemStates.Fan === 'ON' ? 'FAN: ' + systemStates.Fan : 'FAN: AUTO' : ''}`}</p>
+                    <div className={styles.bottom_margin}><CurStatusSetting /></div>
+                </>
+            }            
         </div>
     )
 }
