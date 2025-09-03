@@ -30,7 +30,7 @@ export const HeatStageOneBtn = (props) =>{
 
     return (
         <button 
-            className={`${btnStyles['icon-btn']} ${data !== null && data.heatStageOneOn ? btnStyles.active : ''}`}
+            className={`${btnStyles['icon-btn']} ${data !== null && data.heatStage1_On ? btnStyles.active : ''}`}
             onClick={setHeatStageOne_Handler}
           >
               <Flame size={40} color="orange" strokeWidth={2} />
