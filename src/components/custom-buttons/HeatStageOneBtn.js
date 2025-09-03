@@ -7,7 +7,7 @@ export const HeatStageOneBtn = (props) =>{
     
     const setHeatStageOne_Handler = async () =>{
         try {
-            const response = await fetch(requestAddress.directIP_toggleHeatStageOne, 
+            const response = await fetch(requestAddress.directIP_toggleHeat_Stage1, 
                 {
                     method: 'GET'
                 }); 

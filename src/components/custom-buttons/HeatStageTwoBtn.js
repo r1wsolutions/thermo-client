@@ -36,4 +36,4 @@ export const HeatStageTwoBtn = () =>{
             <p style={{ fontSize: '0.8rem', margin: '5px 0 0' }}>EM Heat</p>
         </button>
     )
-}
+} 

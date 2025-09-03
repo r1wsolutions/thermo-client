@@ -10,7 +10,7 @@ export const ACBtn = (props) =>{
             const response = await fetch(requestAddress.directIP_toggleAC, 
                 {
                     method: 'GET'
-                });
+                }); 
 
             if (!response.ok) {
                 console.error('Failed to update AC:', response.status);
