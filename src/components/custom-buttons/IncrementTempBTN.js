@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
-import styles from './BtnStyles.module.css'
+import btnStyles from './BtnStyles.module.css';
 import { Plus} from 'lucide-react';
 import { Spinner } from '../loaders/Spinner';
-
 import {useTheme} from '../../context-api/MainProvider'
-
 
 export const IncrementTempBTN =() =>{
     const [max] = useState(80)
@@ -17,53 +15,39 @@ export const IncrementTempBTN =() =>{
 
     // --- The function you want to execute after the debounce delay ---
     const performAction = useCallback(async (val) => {
-
         try {
             setLoading(true)
-
             const requestBody = {
-                                    method: "POST",
-                                    headers: {
-                                        'Content-Type': 'application/json',
-                                    },
-                                    body: JSON.stringify({clientSetTemp: val})
-                                }
+                method: "POST",
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({clientSetTemp: val})
+            }
 
             const response = await fetch(requestAddress.directIP_SetTemp, requestBody)
-
             if(response){
                 const resBody = await response.json()
-
                 if(resBody) {
                     setLoading(false)
                     setClientSetTemp(null)
                     console.log(resBody)
                 }
             }
-
         } catch (error) {
             setLoading(false)
         }
     },[setLoading, requestAddress, setClientSetTemp])
 
-
     // --- Click Handler ---
     const clickHandler = () => {
-
         if(tempData === null) return
 
-        if(clientSetTemp === null)
-        {
+        if(clientSetTemp === null) {
             const tempVal = tempData.setTemp + 1;
-
             if(tempVal > max) {return}
-
             setClientSetTemp(tempVal)
-        }else{
+        } else {
             const tempVal =  clientSetTemp + 1
-
             if(tempVal > max) return
-
             setClientSetTemp(tempVal)
         }
         
@@ -79,17 +63,14 @@ export const IncrementTempBTN =() =>{
         }, DEBOUNCE_DELAY_MS);
     };
 
-    
     // --- Cleanup on component unmount ---
-    // Important to clear the timeout if the component is unmounted
-    // before the debounce timer fires, to prevent memory leaks.
     useEffect(() => {
         return () => {
             if (debounceTimerRef.current) {
                 clearTimeout(debounceTimerRef.current);
             }
         };
-    }, []); // Empty dependency array means this effect runs once on mount, and cleanup on unmount
+    }, []);
 
     useEffect(() => {
         if (shouldPerformAction) {
@@ -98,15 +79,15 @@ export const IncrementTempBTN =() =>{
         }
     }, [shouldPerformAction, performAction,clientSetTemp]);
 
-
     return <>
-                {loading ? 
-                <Spinner /> : 
-                <button 
-                    className={styles.settings_btn}
-                    onClick={clickHandler}
-                >
-                    <Plus size={60} color="black" strokeWidth={2} />
-                </button>}
-            </>
+        {loading ? 
+            <Spinner /> : 
+            <button 
+                className={btnStyles['icon-btn']}
+                onClick={clickHandler}
+            >
+                <Plus size={40} color="black" strokeWidth={2} />
+            </button>
+        }
+    </>
 }

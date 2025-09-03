@@ -106,43 +106,7 @@ html, body {
   box-sizing: border-box;
 }
 
-.settings_btn{
-  height: 90%;
-  
-  width: 10%;
-  min-width: 100px;
-  cursor: pointer;
-  background-color: rgb(237, 237, 237);
-  border: lightskyblue 1px solid;
-  border-radius: 1.5rem;
-}
-
-
-.settings_btn:active {
-  background-color: rgb(243, 247, 215); /* Change background color when clicked */
-  transform: scale(0.95); /* Slightly shrink the button when clicked */
-}
-
-.em_heat__btn{
-    height: 80px;
-    width: 100px;;
-    cursor: pointer;
-    border: red 1px solid;
-    border-radius: .5rem;
-    background-color: white;
-}
-
-.current-active{
-  height: 90%;
-  min-height: 100px;
-  width: 10%;
-  min-width: 100px;
-  cursor: pointer;
-  background-color: rgb(237, 237, 237);
-  border: lightskyblue 1px solid;
-  border-radius: 1.5rem;
-  outline: 2px solid yellow; /* Add an outline when the button is focused via keyboard */
-}
+/* Removed old button styles - now using shared styles in BtnStyles.module.css */
 .left_holder{
   width: 40%;
   height: 100%;

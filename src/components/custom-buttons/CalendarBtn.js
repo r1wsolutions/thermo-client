@@ -1,20 +1,20 @@
-import styles from './BtnStyles.module.css'
+import btnStyles from './BtnStyles.module.css';
 import {CalendarClock } from 'lucide-react';
 import {useTheme} from '../../context-api/MainProvider'
 
 export const CalendarBtn =() =>{
-
     const {setMessageHandler} = useTheme()
 
     const onClickHandler = () => {
-        setMessageHandler('this feature is not avaiable')
+        setMessageHandler('This feature is not available')
     }
 
     return (
         <button 
-            className={styles.calendarBTN}
+            className={btnStyles['icon-btn']}
             onClick={onClickHandler}
         >
-                  <CalendarClock size={72} color="black" strokeWidth={2} />
-        </button>)
+            <CalendarClock size={40} color="black" strokeWidth={2} />
+        </button>
+    )
 }

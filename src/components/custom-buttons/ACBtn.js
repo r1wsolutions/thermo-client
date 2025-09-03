@@ -1,13 +1,11 @@
-import styles from '../../App.module.css'
+import btnStyles from './BtnStyles.module.css';
 import {ThermometerSnowflake} from 'lucide-react';
-
 import { useTheme } from '../../context-api/MainProvider';
 
 export const ACBtn = (props) =>{
     const {requestAddress, data, setMessageHandler} = useTheme()
     
     const setAC_Handler = async () =>{
-
         try {
             const response = await fetch(requestAddress.directIP_toggleAC, 
                 {
@@ -21,8 +19,7 @@ export const ACBtn = (props) =>{
 
             const data = await response.json();
             
-            if(data.error)
-            {
+            if(data.error) {
                 throw new Error(data.error)
             }
         } catch (error) {
@@ -33,10 +30,10 @@ export const ACBtn = (props) =>{
 
     return (
         <button 
-            className={`${styles.settings_btn} ${data !== null ? data.acOn ? styles.is_active : '' : ''}`}
+            className={`${btnStyles['icon-btn']} ${data !== null && data.acOn ? btnStyles.active : ''}`}
             onClick={setAC_Handler}
           >
-              <ThermometerSnowflake size={72} color="blue" strokeWidth={2} />
+              <ThermometerSnowflake size={40} color="blue" strokeWidth={2} />
           </button>
     )
 }
