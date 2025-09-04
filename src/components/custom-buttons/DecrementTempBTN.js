@@ -5,7 +5,7 @@ import { Spinner } from '../loaders/Spinner';
 import {useTheme} from '../../context-api/MainProvider'
 
 export const DecrementTempBTN =() =>{
-    const [max] = useState(80)
+    const [min] = useState(60)
     const [shouldPerformAction, setShouldPerformAction] = useState(false);
 
     const {tempData, loading, setLoading,requestAddress, clientSetTemp, setClientSetTemp} = useTheme()
@@ -43,11 +43,11 @@ export const DecrementTempBTN =() =>{
 
         if(clientSetTemp === null) {
             const tempVal = tempData.setTemp - 1;
-            if(tempVal > max) {return}
+            if(tempVal < min) {return}
             setClientSetTemp(tempVal)
-        } else {
+        } else { 
             const tempVal =  clientSetTemp - 1
-            if(tempVal > max) return
+            if(tempVal < min) return
             setClientSetTemp(tempVal)
         }
         

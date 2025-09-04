@@ -18,7 +18,7 @@ export const MainProvider = ({ children }) => {
     console.log('setting message ', message)
     setMessage(message)
   }
-  
+   
   const values = {
     message,
     setMessageHandler,
@@ -55,7 +55,8 @@ export const MainProvider = ({ children }) => {
         }
 
         const jsonData = await response.json();
-        console.log(jsonData);
+        console.log('fetched settings:', jsonData);
+
         setData(jsonData.settings);
         setSystemStates(jsonData.currentSystemState);
         setLoading(false);

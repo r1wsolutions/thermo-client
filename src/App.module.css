@@ -88,6 +88,14 @@ html, body {
   font-family: 'Lato', sans-serif;
 }
 
+.client_temp_setting{
+  color: white;
+  font-weight: bolder;
+  font-size: 2rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: bolder;
+}
+
 .buttons_holder{
   padding: .25rem 0;
   display: flex;

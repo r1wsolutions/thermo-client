@@ -47,7 +47,7 @@ export const IncrementTempBTN =() =>{
             setClientSetTemp(tempVal)
         } else {
             const tempVal =  clientSetTemp + 1
-            if(tempVal > max) return
+            if(tempVal > max) return 
             setClientSetTemp(tempVal)
         }
         

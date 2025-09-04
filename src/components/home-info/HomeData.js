@@ -12,10 +12,10 @@ export const HomeData =()=>{
     useEffect(() => {
         const handleResize = () => {
         if (window.innerWidth < 750) {
-            setIconSize(20); // Adjust size for smaller screens
-        } else {
-            setIconSize(40); // Default size for larger screens
-        }
+                setIconSize(20); // Adjust size for smaller screens
+            } else {
+                setIconSize(40); // Default size for larger screens
+            }
         };
 
         // Initial call to set the icon size on mount
@@ -64,9 +64,13 @@ export const HomeData =()=>{
                         <p>INSIDE TEMP: </p>
                         <p className={`${styles.margin_none} ${styles.light_background}`}>{`${tempData ? tempData.temp.toFixed(2) : '...'}°`}</p>
                     </div>
-                    <p className={styles.margin_none}>{`${tempData ? tempData.humidity.toFixed(2) : '...'}%`}</p>
-                    <p className={`${styles.margin_none} ${systemStates.power === 'ON' ? styles.on : styles.off}`}>System Status: {systemStates.power === 'ON' ? systemStates.power : <span className={styles.off_text}>OFF</span>}</p>
-                    <p className={styles.margin_none}>{`${systemStates !== null ? systemStates.Fan === 'ON' ? 'FAN: ' + systemStates.Fan : 'FAN: AUTO' : ''}`}</p>
+                    <div><p className={`${styles.margin_none} ${styles.status_white}`}>{`${tempData ? tempData.humidity.toFixed(2) : '...'}%`}</p></div>
+                    <p className={`${styles.margin_none} ${systemStates.power === 'ON' ? styles.on : styles.off}`}>
+                        System Status: {systemStates.power === 'ON' ? systemStates.power : <span className={styles.off_text}>OFF</span>}
+                    </p>
+                    <p className={styles.margin_none}>
+                        FAN:{systemStates.Fan === 'ON' ? <span className={styles.on}>ON</span> : <span className={styles.status_white}>AUTO</span>}
+                    </p>
                     <div className={styles.bottom_margin}><CurStatusSetting /></div>
                 </>
             }            

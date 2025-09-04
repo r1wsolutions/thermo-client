@@ -127,7 +127,7 @@ function App() {
               </div>
 
               <div className={styles.height_bump}>
-                <h1>{clientSetTemp ? `${clientSetTemp}°`: ''}</h1>
+                <h1 className={styles.client_temp_setting}>{clientSetTemp ? `${clientSetTemp}°`: ''}</h1>
               </div>
             </div>
   
