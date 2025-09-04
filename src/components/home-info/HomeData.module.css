@@ -46,6 +46,13 @@
 .bottom_margin{
     margin-bottom: 1rem;
 }
+.humidity__wrapper{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
 .on{
     color: greenyellow;
     font-weight: bolder;

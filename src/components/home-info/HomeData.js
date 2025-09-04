@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './HomeData.module.css'
 import {Home} from 'lucide-react';
 import {useTheme} from '../../context-api/MainProvider'
+import { Droplets } from 'lucide-react';
 
 export const HomeData =()=>{
 
@@ -51,7 +52,7 @@ export const HomeData =()=>{
         return <p className={styles.margin_none}>Setting: Idle</p>
         
     }
-
+ 
     return(
         <div className={styles.wrapper}>
             <div className={styles.top_margin}>
@@ -64,12 +65,12 @@ export const HomeData =()=>{
                         <p>INSIDE TEMP: </p>
                         <p className={`${styles.margin_none} ${styles.light_background}`}>{`${tempData ? tempData.temp.toFixed(2) : '...'}°`}</p>
                     </div>
-                    <div><p className={`${styles.margin_none} ${styles.status_white}`}>{`${tempData ? tempData.humidity.toFixed(2) : '...'}%`}</p></div>
+                    <div className={styles.humidity__wrapper}><Droplets color='lightblue'/> <p className={`${styles.margin_none} ${styles.status_white}`}>{`${tempData ? tempData.humidity.toFixed(2) : '...'}%`}</p></div>
                     <p className={`${styles.margin_none} ${systemStates.power === 'ON' ? styles.on : styles.off}`}>
                         System Status: {systemStates.power === 'ON' ? systemStates.power : <span className={styles.off_text}>OFF</span>}
                     </p>
                     <p className={styles.margin_none}>
-                        FAN:{systemStates.Fan === 'ON' ? <span className={styles.on}>ON</span> : <span className={styles.status_white}>AUTO</span>}
+                        FAN: {systemStates.Fan === 'ON' ? <span className={styles.on}>ON</span> : <span className={styles.status_white}>AUTO</span>}
                     </p>
                     <div className={styles.bottom_margin}><CurStatusSetting /></div>
                 </>
